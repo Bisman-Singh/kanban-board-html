@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban Task Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Kanban Board</h1>
+    <button id="add-task-btn">+ New Task</button>
+  </header>
+
+  <main class="board">
+    <div class="column" data-status="todo">
+      <div class="column-header">
+        <h2>To Do</h2>
+        <span class="task-count" id="count-todo">0</span>
+      </div>
+      <div class="task-list" id="list-todo"></div>
+    </div>
+    <div class="column" data-status="in-progress">
+      <div class="column-header">
+        <h2>In Progress</h2>
+        <span class="task-count" id="count-in-progress">0</span>
+      </div>
+      <div class="task-list" id="list-in-progress"></div>
+    </div>
+    <div class="column" data-status="done">
+      <div class="column-header">
+        <h2>Done</h2>
+        <span class="task-count" id="count-done">0</span>
+      </div>
+      <div class="task-list" id="list-done"></div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <h3 id="modal-title">New Task</h3>
+      <form id="task-form">
+        <label for="task-title-input">Title *</label>
+        <input type="text" id="task-title-input" required placeholder="Task title">
+        <label for="task-desc-input">Description</label>
+        <textarea id="task-desc-input" placeholder="Optional description" rows="3"></textarea>
+        <label for="task-priority-input">Priority</label>
+        <select id="task-priority-input">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <div class="modal-actions">
+          <button type="button" id="modal-cancel">Cancel</button>
+          <button type="submit" id="modal-save">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="confirm-overlay">
+    <div class="modal confirm-modal">
+      <p>Delete this task?</p>
+      <div class="modal-actions">
+        <button id="confirm-no">Cancel</button>
+        <button id="confirm-yes" class="danger">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
