@@ -17,3 +17,5 @@ A drag-and-drop Kanban board built with pure HTML, CSS, and JavaScript.
 ## Usage
 
 Open `index.html` in any modern browser. No build tools or dependencies required.
+
+<sub><sup>Originally developed and tested locally during learning. Later organized and pushed to GitHub for portfolio visibility.</sup></sub>
